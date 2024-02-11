@@ -1,7 +1,13 @@
 ## CloudFormation for EC2 in Public Subnet 
 
+This CloudFormation template allows you to provision an EC2 instance quickly. By default, SSH port 22 and RDP port 3389 are exposed to all.
+
+- [Prerequisite](#prerequisite)
 - [CloudFormation Template](#cloudformation-template)
 - [How to deploy](#how-to-deploy)
+
+## Prerequisite
+You need to create a Key Pair in advance which you will pass as parameter to this template.
 
 ## CloudFormation Template
 ```yaml
