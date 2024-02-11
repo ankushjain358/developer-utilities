@@ -1,8 +1,7 @@
 ## CloudFormation for EC2 in Public Subnet 
 
-## Table of Contents
-- [CloudFormation Template]
-- [How to deploy]
+- [CloudFormation Template](#cloudformation-template)
+- [How to deploy](#how-to-deploy)
 
 ## CloudFormation Template
 ```yaml
@@ -93,7 +92,7 @@ Resources:
             - !Ref MySecurityGroup
           SubnetId: !Ref MyPublicSubnet
       CreditSpecification:
-        CPUCredits: 'unlimited' 
+        CPUCredits: 'unlimited' # This is only required for T family burstable instances
 
 ```
 
@@ -101,7 +100,7 @@ Resources:
 Use below command to deploy the above Cfn template.
 > Replace `\` with `^` when running below multiline command in Windows.
 ```
-aws cloudformation create-stack
+aws cloudformation create-stack \
   --stack-name EC2-Stack \
   --template-body file://C:/Users/username/Desktop/EC2/template.yml \
   --parameters ParameterKey=KeyName,ParameterValue=<key-name> ParameterKey=InstanceType,ParameterValue=<instance-type> ParameterKey=AMIId,ParameterValue=<ami-id> \
