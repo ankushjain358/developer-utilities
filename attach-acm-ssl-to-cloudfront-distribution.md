@@ -1,5 +1,5 @@
 # Attach ACM Certificate to CloudFront distribution
-```
+
 1.	Create a ACM certificate in US-East-1 region.
 	```
 	aws acm request-certificate --domain-name www.example.com --validation-method DNS --region us-east-1
@@ -26,4 +26,4 @@
 	aws cloudfront associate-alias \
 		--distribution-id DISTRIBUTION_ID \
 		--alias ALIAS_NAME
-```
+
