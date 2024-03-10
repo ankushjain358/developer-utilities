@@ -4,7 +4,7 @@ This CloudFormation template allows you to provision a very general purpose stac
 In this setup, the public access to the S3 bucket is disabled, and CloudFront accesses the original S3 bucket via OAC.
 
 ## CloudFormation Template
-```
+```yaml
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: An AWS Serverless Application. This template is partially managed by
