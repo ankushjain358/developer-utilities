@@ -79,10 +79,14 @@ Outputs:
 ## How to deploy
 Use below command to deploy the above Cfn template.
 > Replace \ with ^ when running below multiline command in Windows.
-```
+```bash
 aws cloudformation create-stack \
   --stack-name <stack-name> \
-  --template-body file://C:/Users/username/Desktop/CloudFormation/template.yml \
-  --parameters ParameterKey=BucketName,ParameterValue=<BucketName> \
+  --template-url https://cdn.coderjony.com/cloudformation/s3-cloudfront.yaml \
+  --parameters ParameterKey=BucketName,ParameterValue=<bucket-name> \
   --capabilities CAPABILITY_IAM
+```
+## Clean up
+```bash
+aws cloudformation delete-stack --stack-name <stack-name>
 ```
