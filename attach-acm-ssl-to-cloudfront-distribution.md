@@ -27,3 +27,10 @@
 		--distribution-id DISTRIBUTION_ID \
 		--alias ALIAS_NAME
 
+## Clean up
+1. Delete ACM
+2. Delete CNAME records from hosted zone
+
+## TODO
+1. Try to re-run the Cfn template to check if ACM & SSL certificates are removed or not.
+2. Modify the Cfn to include SSL and Domain, and keep SSL setup as first step.
