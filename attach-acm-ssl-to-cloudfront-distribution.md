@@ -1,5 +1,6 @@
 # Attach ACM Certificate to CloudFront distribution
 
+## Steps
 1.	Create a ACM certificate in `us-east-1` region with below command, or via AWS Console.
 	```
 	aws acm request-certificate --domain-name www.example.com --validation-method DNS --region us-east-1
