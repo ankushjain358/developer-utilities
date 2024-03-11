@@ -97,6 +97,9 @@ aws cloudformation deploy \
   --parameters ParameterKey=BucketName,ParameterValue=<bucket-name> \
 ```
 
+## Optional - Attaching ACM SSL certificate to CloudFront distribution
+Refer [How to attach ACM SSL certificate to CloudFront distribution](https://github.com/ankushjain358/developer-utilities/blob/main/attach-acm-ssl-to-cloudfront-distribution.md) for more detail.
+
 ## Clean up
 ```bash
 aws cloudformation delete-stack --stack-name <stack-name>
