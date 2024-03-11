@@ -7,7 +7,7 @@
 	```
 2.	Create CNAME records where you manage your domain to complete the validation. Remove `.` from the CNAME value when copying.
 	```
-	aws acm describe-certificate --certificate-arn <certificate-arn>
+	aws acm describe-certificate --certificate-arn <certificate-arn> --region us-east-1
 	```	
 4. 	Go to CloudFront distribution, edit general settings, add custom domain name and select ACM certificate, and save.
 
