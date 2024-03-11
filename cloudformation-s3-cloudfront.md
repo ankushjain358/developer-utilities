@@ -94,7 +94,7 @@ aws cloudformation create-stack \
 aws cloudformation deploy \
   --stack-name <stack-name> \
   --template-file <template-filepath> \
-  --parameter-overrides BucketName=<bucket-name> \
+  --parameter-overrides BucketName=<bucket-name>
 ```
 
 ## Optional - Attaching ACM SSL certificate to CloudFront distribution
