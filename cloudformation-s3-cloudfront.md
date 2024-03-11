@@ -28,7 +28,7 @@ Resources:
       DistributionConfig:
         Enabled: true
         DefaultRootObject: index.html
-        PriceClass: PriceClass_100 
+        PriceClass: PriceClass_100
         DefaultCacheBehavior:
           CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
           TargetOriginId: S3BucketOrigin
@@ -73,12 +73,14 @@ Resources:
                 AWS:SourceArn: !Sub "arn:aws:cloudfront::${AWS::AccountId}:distribution/${CloudFrontDistribution.Id}"
 Outputs:
   CloudFrontDistributionUrl:
-    Value: !Ref CloudFrontDistribution
-    Description: The CloudFront distribution URL
+    Value: !Sub "https://${CloudFrontDistribution.DomainName}"
+    Description: URL of the CloudFront distribution
 ```
 ## How to deploy
-Use below command to deploy the above Cfn template.
+Use below commands to deploy the above Cfn template.
 > Replace \ with ^ when running below multiline command in Windows.
+
+### Method 1
 ```bash
 aws cloudformation create-stack \
   --stack-name <stack-name> \
@@ -86,6 +88,15 @@ aws cloudformation create-stack \
   --parameters ParameterKey=BucketName,ParameterValue=<bucket-name> \
   --capabilities CAPABILITY_IAM
 ```
+
+### Method 2
+```bash
+aws cloudformation deploy \
+  --stack-name <stack-name> \
+  --template-file <template-filepath> \
+  --parameters ParameterKey=BucketName,ParameterValue=<bucket-name> \
+```
+
 ## Clean up
 ```bash
 aws cloudformation delete-stack --stack-name <stack-name>
