@@ -81,6 +81,7 @@ Use below commands to deploy the above Cfn template.
 > Replace \ with ^ when running below multiline command in Windows.
 
 ### Method 1
+`aws cloudformation create-stack` is a fire-and-forget method. It does not wait for the stack operation to finish.
 ```bash
 aws cloudformation create-stack \
   --stack-name <stack-name> \
@@ -90,6 +91,7 @@ aws cloudformation create-stack \
 ```
 
 ### Method 2
+`aws cloudformation deploy` is a synchronous method that waits for the stack operation to complete, whether it succeeds or fails.
 ```bash
 aws cloudformation deploy \
   --stack-name <stack-name> \
