@@ -1,4 +1,4 @@
-# Attach ACM Certificate to CloudFront distribution
+# Add a Custom Domain to CloudFront distribution with SSL
 
 ## Steps
 1.	Create a ACM certificate in `us-east-1` region with below command, or via AWS Console.
