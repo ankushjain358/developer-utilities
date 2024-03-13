@@ -108,7 +108,7 @@ Use below command to deploy the above Cfn template.
 ```
 aws cloudformation create-stack \
   --stack-name EC2-Stack \
-  --template-body file://C:/Users/username/Desktop/EC2/template.yml \
+  --template-url https://cdn.coderjony.com/cloudformation/ec2.yaml \
   --parameters ParameterKey=KeyName,ParameterValue=<key-name> ParameterKey=InstanceType,ParameterValue=<instance-type> ParameterKey=AMIId,ParameterValue=<ami-id> \
   --capabilities CAPABILITY_IAM
 ```
