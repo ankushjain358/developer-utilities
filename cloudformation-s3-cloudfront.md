@@ -1,4 +1,4 @@
-## CloudFormation for CloudFront to S3 with OAC
+# CloudFormation for CloudFront to S3 with OAC
 This CloudFormation template allows you to provision a very general purpose stack comprising of an S3 bucket, a CloudFront distribution. 
 
 In this setup, the public access to the S3 bucket is disabled, and CloudFront accesses the original S3 bucket via OAC.
@@ -87,7 +87,8 @@ aws cloudformation create-stack \
   --stack-name <stack-name> \
   --template-url https://cdn.coderjony.com/cloudformation/s3-cloudfront.yaml \
   --parameters ParameterKey=BucketName,ParameterValue=<bucket-name> \
-  --capabilities CAPABILITY_IAM
+  --capabilities CAPABILITY_IAM \
+  --region us-east-1
 ```
 
 ### Method 2
@@ -96,11 +97,12 @@ aws cloudformation create-stack \
 aws cloudformation deploy \
   --stack-name <stack-name> \
   --template-file <template-filepath> \
-  --parameter-overrides BucketName=<bucket-name>
+  --parameter-overrides BucketName=<bucket-name> \
+  --region us-east-1
 ```
 
-## Optional - Attaching ACM SSL certificate to CloudFront distribution
-Refer [How to attach ACM SSL certificate to CloudFront distribution](https://github.com/ankushjain358/developer-utilities/blob/main/attach-acm-ssl-to-cloudfront-distribution.md) for more detail.
+## Optional - Add a Custom Domain to CloudFront distribution with an ACM SSL certificate
+Refer [How to add a Custom Domain to CloudFront distribution with SSL](https://github.com/ankushjain358/developer-utilities/blob/main/add-a-custom-domain-to-cloudfront-distribution-with-ssl.md) for more detail.
 
 ## Clean up
 ```bash

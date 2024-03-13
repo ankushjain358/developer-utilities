@@ -1,4 +1,4 @@
-## CloudFormation for EC2 in Public Subnet 
+# CloudFormation for EC2 in Public Subnet 
 
 This CloudFormation template allows you to provision an EC2 instance quickly. By default, SSH port 22 and RDP port 3389 are exposed to all.
 

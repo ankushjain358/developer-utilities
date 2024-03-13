@@ -1,5 +1,6 @@
 # Add a Custom Domain to CloudFront distribution with SSL
 
+
 ## Steps
 1.	Create a ACM certificate in `us-east-1` region with below command, or via AWS Console.
 	```
@@ -9,10 +10,12 @@
 	```
 	aws acm describe-certificate --certificate-arn <certificate-arn> --region us-east-1
 	```	
-4. 	Go to CloudFront distribution, edit general settings, add custom domain name and select ACM certificate, and save.
+4. 	Go to CloudFront distribution, edit general settings, add **Alternate domain name (CNAME)**, select **Custom SSL certificate** and save.
+5. 	Now, just add a CNAME record to your domain (for example `cdn.example.com`), and point it to the Cloudfront distribution URL.
 
 ## Clean up
 1. Remove the association of ACM certification with CloudFront distribution. 
-1. Delete ACM certificate from `us-east-1` region.
-2. Delete CNAME records created for DNS validation from the hosted zone
+2. Delete ACM certificate from `us-east-1` region.
+3. Delete CNAME record created for DNS validation from the hosted zone.
+4. Delete CNAME record that point to Cloudfront distribution.
 
