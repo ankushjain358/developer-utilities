@@ -12,6 +12,7 @@
 	```	
 4. 	Go to CloudFront distribution, edit general settings, add **Alternate domain name (CNAME)**, select **Custom SSL certificate** and save.
 5. 	Now, just add a CNAME record to your domain (for example `cdn.example.com`), and point it to the Cloudfront distribution URL.
+6. 	You're all good now!
 
 ## Clean up
 1. Remove the association of ACM certification with CloudFront distribution. 
